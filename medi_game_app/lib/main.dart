@@ -100,7 +100,12 @@ class SignIn extends StatelessWidget {
 						style: TextButton.styleFrom(
 						textStyle: const TextStyle(fontSize: 20),
 						),
-						onPressed: () {},
+						onPressed: () {
+							Navigator.push(
+								context,
+								MaterialPageRoute(builder: (context) => const Home())
+							);
+						},
 						child: const Text('Login'),
 					)
 				]
@@ -144,10 +149,62 @@ class SignUp extends StatelessWidget {
 						style: TextButton.styleFrom(
 						textStyle: const TextStyle(fontSize: 20),
 						),
-						onPressed: () {},
+						onPressed: () {
+							Navigator.push(
+								context,
+								MaterialPageRoute(builder: (context) => const Home())
+							);
+						},
 						child: const Text('Proceed'),
 					)
 				]
+			)
+		);
+	}
+}
+
+//Home Page
+//Search, Settings, Welcome Text, Account
+class Home extends StatelessWidget {
+	const Home({Key? key}) : super(key: key);
+
+	@override
+	Widget build(BuildContext context) {
+		return Scaffold(
+			backgroundColor: Colors.white,
+			appBar: AppBar(title: const Text('Select an Activity')),
+			body: GridView.count(
+				crossAxisCount: 2,
+				children: [
+					TextButton(
+						style: TextButton.styleFrom(
+						textStyle: const TextStyle(fontSize: 20),
+						),
+						onPressed: () {},
+						child: const Text('X-Ray'),
+					),
+					TextButton(
+						style: TextButton.styleFrom(
+						textStyle: const TextStyle(fontSize: 20),
+						),
+						onPressed: () {},
+						child: const Text('Vaccination'),
+					),
+					TextButton(
+						style: TextButton.styleFrom(
+						textStyle: const TextStyle(fontSize: 20),
+						),
+						onPressed: () {},
+						child: const Text('Check Up'),
+					),
+					TextButton(
+						style: TextButton.styleFrom(
+						textStyle: const TextStyle(fontSize: 20),
+						),
+						onPressed: () {},
+						child: const Text('Bandage'),
+					),
+				],
 			)
 		);
 	}
