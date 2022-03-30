@@ -88,6 +88,17 @@ class SignIn extends StatelessWidget {
                   MaterialPageRoute(builder: (context) => const Home()));
             },
             child: const Text('Login'),
+          ),
+          const SizedBox(height: 30),
+          TextButton(
+            style: TextButton.styleFrom(
+              textStyle: const TextStyle(fontSize: 20),
+            ),
+            onPressed: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => const Home()));
+            },
+            child: const Text('Forgot password?'),
           )
         ]));
   }
@@ -109,17 +120,20 @@ class SignUp extends StatelessWidget {
             border: UnderlineInputBorder(),
             labelText: 'Username',
           )),
+          const SizedBox(height: 30),
           TextFormField(
               decoration: const InputDecoration(
             border: UnderlineInputBorder(),
             labelText: 'Email',
           )),
+          const SizedBox(height: 30),
           TextFormField(
               obscureText: true,
               decoration: const InputDecoration(
                 border: UnderlineInputBorder(),
                 labelText: 'Password',
               )),
+          const SizedBox(height: 30),
           TextButton(
             style: TextButton.styleFrom(
               textStyle: const TextStyle(fontSize: 20),
@@ -136,6 +150,7 @@ class SignUp extends StatelessWidget {
 
 //Home Page
 //Search, Settings, Welcome Text, Account
+//Added colours to distinguish buttons
 class Home extends StatelessWidget {
   const Home({Key? key}) : super(key: key);
 
@@ -149,6 +164,7 @@ class Home extends StatelessWidget {
           children: [
             TextButton(
               style: TextButton.styleFrom(
+                backgroundColor: Color.fromARGB(64, 113, 68, 196),
                 textStyle: const TextStyle(fontSize: 20),
               ),
               onPressed: () {},
@@ -156,6 +172,7 @@ class Home extends StatelessWidget {
             ),
             TextButton(
               style: TextButton.styleFrom(
+                backgroundColor: Color.fromARGB(64, 68, 196, 85),
                 textStyle: const TextStyle(fontSize: 20),
               ),
               onPressed: () {},
@@ -163,6 +180,7 @@ class Home extends StatelessWidget {
             ),
             TextButton(
               style: TextButton.styleFrom(
+                backgroundColor: Color.fromARGB(64, 196, 177, 68),
                 textStyle: const TextStyle(fontSize: 20),
               ),
               onPressed: () {},
@@ -170,6 +188,7 @@ class Home extends StatelessWidget {
             ),
             TextButton(
               style: TextButton.styleFrom(
+                backgroundColor: Color.fromARGB(64, 196, 77, 68),
                 textStyle: const TextStyle(fontSize: 20),
               ),
               onPressed: () {},
@@ -179,9 +198,47 @@ class Home extends StatelessWidget {
               style: TextButton.styleFrom(
                 textStyle: const TextStyle(fontSize: 20),
               ),
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => const Settings()));
+              },
               child: const Text('Settings'),
+            )
+          ],
+        ));
+  }
+}
+
+//Home Page
+//Search, Settings, Welcome Text, Account
+//Added colours to distinguish buttons
+class Settings extends StatelessWidget {
+  const Settings({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        backgroundColor: Colors.white,
+        appBar: AppBar(title: const Text('Select an Activity')),
+        body: GridView.count(
+          crossAxisCount: 2,
+          children: [
+            TextButton(
+              style: TextButton.styleFrom(
+                backgroundColor: Color.fromARGB(64, 113, 68, 196),
+                textStyle: const TextStyle(fontSize: 20),
+              ),
+              onPressed: () {},
+              child: const Text('Account'),
             ),
+            TextButton(
+              style: TextButton.styleFrom(
+                backgroundColor: Color.fromARGB(64, 68, 196, 85),
+                textStyle: const TextStyle(fontSize: 20),
+              ),
+              onPressed: () {},
+              child: const Text('Parental Controls'),
+            )
           ],
         ));
   }
