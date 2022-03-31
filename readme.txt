@@ -1,6 +1,8 @@
 MediGame
 -An app for Solution Challenge 2022. Targetting UN Goal 3. This app will help children understand the hospital environment. 
 
+-Video: https://www.youtube.com/watch?v=onJ80RkCDMs
+
 Authors: 
 -David Cooke
 -Paul Cotarelo
